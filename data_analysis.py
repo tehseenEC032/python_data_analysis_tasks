@@ -42,7 +42,7 @@ def get_matrix_input(prompt):
         rows_str = input("Enter number of rows: ")
         cols_str = input("Enter number of columns: ")
         if not rows_str.isdigit() or not cols_str.isdigit():
-            print("Invalid input. Rows and columns must be numbers. Try again.")
+            print("Invalid input")
             continue
         rows = int(rows_str)
         cols = int(cols_str)
@@ -53,14 +53,14 @@ def get_matrix_input(prompt):
             row_str = input(f"Row {i+1}: ")
             row_elements = row_str.split()
             if len(row_elements) != cols:
-                print("Error: The number of elements does not match the number of columns. Try again.")
+                print("The number of elements does not match the number of columns")
                 is_valid = False
                 break
             try:
                 row = [int(x) for x in row_elements]
                 matrix.append(row)
             except ValueError:
-                print("Invalid input. All elements must be numbers. Try again.")
+                print("Invalid input")
                 is_valid = False
                 break
         if is_valid:
@@ -82,7 +82,7 @@ while True:
             print("\nResult of A + B:")
             print(np.add(A, B))
         else:
-            print("\nError: Matrices must have the same dimensions for addition.")
+            print("\n Matrices must have the same dimensions for addition.")
     elif choice == '2':
         A = get_matrix_input("Enter Matrix A:")
         B = get_matrix_input("Enter Matrix B:")
@@ -90,7 +90,7 @@ while True:
             print("\nResult of A - B:")
             print(np.subtract(A, B))
         else:
-            print("\nError: Matrices must have the same dimensions for subtraction.")
+            print("\n Matrices must have the same dimensions for subtraction.")
     elif choice == '3':
         A = get_matrix_input("Enter Matrix A:")
         B = get_matrix_input("Enter Matrix B:")
@@ -99,7 +99,7 @@ while True:
             print("\nResult of A * B:")
             print(np.dot(A, B))
         else:
-            print("\nError: The number of columns in the first matrix must equal the number of rows in the second matrix for multiplication.")
+            print("\n The number of columns in the first matrix must equal the number of rows in the second matrix for multiplication.")
 
     elif choice == '4':
         A = get_matrix_input("Enter Matrix A:")
@@ -113,10 +113,10 @@ while True:
             print("\nResult of Determinant(A):")
             print(np.linalg.det(A))
         else:
-            print("\nError: Determinant can only be calculated for a square matrix.")
+            print("\n Determinant can only be calculated for a square matrix.")
             
     elif choice == '6':
-        print("Exiting tool. Goodbye!")
+        print("Exit")
         break
     else:
         print("Invalid choice. Please enter a number from 1 to 6.")
